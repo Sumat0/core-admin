@@ -8,7 +8,8 @@ builder.Services.AddRazorPages();
 
 // Add the DB Contexts
 builder.Services.AddDbContext<TestDbContext>(options => options.UseInMemoryDatabase("TestDatabase"));
-
+builder.Services.AddDbContext<TestVisitorManagmentDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TestVisitorManagementSystem")));
 // add Core Admin
 builder.Services.AddCoreAdmin();
 

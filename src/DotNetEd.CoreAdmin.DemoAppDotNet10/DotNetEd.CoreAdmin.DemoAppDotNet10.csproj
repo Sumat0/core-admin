@@ -4,7 +4,16 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>fb0f8fc3-e240-4937-ae5b-c7c8004936e0</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Privacy.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Privacy.cshtml" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="DemoAssets\ed-100.png" />
@@ -18,6 +27,11 @@
 
   <ItemGroup>
      <PackageReference Condition="'$(TargetFramework)' == 'net10.0'" Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.1" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.7" />
+     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.7">
+       <PrivateAssets>all</PrivateAssets>
+       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+     </PackageReference>
  
     </ItemGroup>
 
